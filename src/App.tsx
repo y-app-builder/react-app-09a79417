@@ -221,7 +221,7 @@ const styles = {
   },
   deleteButton: {
     padding: '5px 10px',
-    backgroundColor: '#f44336',
+    backgroundColor: '#c62828', // Darker red color
     color: 'white',
     border: 'none',
     borderRadius: '4px',
