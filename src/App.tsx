@@ -62,6 +62,10 @@ const App: React.FC = () => {
     alert(`You have ${itemsLeft} item${itemsLeft === 1 ? '' : 's'} in your todo list.`);
   };
 
+  const handleClearAll = () => {
+    setTodos([]);
+  };
+
   return (
     <div style={styles.container}>
       <h1 style={styles.header}>Todo List</h1>
@@ -83,6 +87,9 @@ const App: React.FC = () => {
       <div style={styles.actionsContainer}>
         <button onClick={handleShowItemsLeft} style={styles.itemsLeftButton}>
           Show Items Count
+        </button>
+        <button onClick={handleClearAll} style={styles.clearAllButton}>
+          Clear All
         </button>
       </div>
       
@@ -157,10 +164,20 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     marginBottom: '20px',
+    gap: '10px',
   },
   itemsLeftButton: {
     padding: '8px 16px',
     backgroundColor: '#2196F3',
+    color: 'white',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    fontSize: '14px',
+  },
+  clearAllButton: {
+    padding: '8px 16px',
+    backgroundColor: '#f44336',
     color: 'white',
     border: 'none',
     borderRadius: '4px',
