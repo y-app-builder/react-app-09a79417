@@ -62,6 +62,10 @@ const App: React.FC = () => {
     alert(`You have ${itemsLeft} item${itemsLeft === 1 ? '' : 's'} in your todo list.`);
   };
 
+  const handleGreetUser = () => {
+    alert('Hello! Welcome to the Todo App!');
+  };
+
   return (
     <div style={styles.container}>
       <h1 style={styles.header}>Todo List</h1>
@@ -83,6 +87,9 @@ const App: React.FC = () => {
       <div style={styles.actionsContainer}>
         <button onClick={handleShowItemsLeft} style={styles.itemsLeftButton}>
           Show Items Count
+        </button>
+        <button onClick={handleGreetUser} style={styles.greetButton}>
+          Greet Me
         </button>
       </div>
       
@@ -162,6 +169,15 @@ const styles = {
   itemsLeftButton: {
     padding: '8px 16px',
     backgroundColor: '#2196F3',
+    color: 'white',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    fontSize: '14px',
+  },
+  greetButton: {
+    padding: '8px 16px',
+    backgroundColor: '#FF00FF', // Magenta color
     color: 'white',
     border: 'none',
     borderRadius: '4px',
