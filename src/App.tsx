@@ -57,6 +57,11 @@ const App: React.FC = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const handleShowItemsLeft = () => {
+    const itemsLeft = todos.length;
+    alert(`You have ${itemsLeft} item${itemsLeft === 1 ? '' : 's'} in your todo list.`);
+  };
+
   return (
     <div style={styles.container}>
       <h1 style={styles.header}>Todo List</h1>
@@ -72,6 +77,12 @@ const App: React.FC = () => {
         />
         <button onClick={handleAddTodo} style={styles.addButton}>
           Add
+        </button>
+      </div>
+      
+      <div style={styles.actionsContainer}>
+        <button onClick={handleShowItemsLeft} style={styles.itemsLeftButton}>
+          Show Items Count
         </button>
       </div>
       
@@ -141,6 +152,20 @@ const styles = {
     borderRadius: '0 4px 4px 0',
     cursor: 'pointer',
     fontSize: '16px',
+  },
+  actionsContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginBottom: '20px',
+  },
+  itemsLeftButton: {
+    padding: '8px 16px',
+    backgroundColor: '#2196F3',
+    color: 'white',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    fontSize: '14px',
   },
   todoList: {
     listStyleType: 'none',
